@@ -82,7 +82,7 @@ COPY ./backend ./
 
 COPY --from=frontend /frontend /frontend
 COPY --from=frontend /backend/windmill-api/openapi-deref.yaml ./windmill-api/openapi-deref.yaml
-COPY .git/ .git/
+# COPY .git/ .git/
 
 RUN CARGO_NET_GIT_FETCH_WITH_CLI=true cargo build --release --features "$features"
 
